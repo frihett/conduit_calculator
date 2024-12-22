@@ -34,5 +34,24 @@ void main() {
         throwsFormatException,
       );
     });
+
+    test('입력 형식 예외 테스트 (공백)', () {
+      expect(
+        () => calculator.calculate('3 +'),
+        throwsFormatException,
+      );
+    });
+    test('입력 형식 예외 테스트 (숫자 외)', () {
+      expect(
+        () => calculator.calculate('b + a'),
+        throwsFormatException,
+      );
+    });
+    test('입력 형식 예외 테스트 (초과 연산)', () {
+      expect(
+        () => calculator.calculate('3 + 3 + 6'),
+        throwsFormatException,
+      );
+    });
   });
 }
