@@ -1,9 +1,8 @@
 import 'package:conduit_calculator/calculator.dart';
-import 'package:conduit_calculator/input_parser.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final calculator = Calculator(InputParser());
+  final calculator = Calculator();
 
   group('계산 작업', () {
     test('더하기 테스트', () {
