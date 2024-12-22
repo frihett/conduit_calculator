@@ -6,6 +6,9 @@ class Calculator {
       throw FormatException('연산자 피연산자 연산자 형식을 맞춰주세요');
     }
 
+    if (parts.any((part) => part.contains(','))) {
+      throw FormatException('천 단위 구분자는 허용되지 않습니다.');
+    }
 
     final double operand1 = double.parse(parts[0]);
     final String operator = parts[1];
