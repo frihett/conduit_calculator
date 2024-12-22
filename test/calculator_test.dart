@@ -20,11 +20,20 @@ void main() {
     test('나누기 테스트', () {
       expect(calculator.calculate('20 / 4'), 5);
     });
+
     test('나누기 에러 테스트', () {
       expect(
         () => calculator.calculate('20 / 0'),
         throwsArgumentError,
       );
     });
+
+    test('천 단위 구분자 예외 테스트', () {
+      expect(
+            () => calculator.calculate('1,000 + 2'),
+        throwsFormatException,
+      );
+    });
+
   });
 }
