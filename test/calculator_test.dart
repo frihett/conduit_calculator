@@ -1,8 +1,9 @@
 import 'package:conduit_calculator/calculator.dart';
+import 'package:conduit_calculator/input_parser.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final calculator = Calculator();
+  final calculator = Calculator(InputParser());
 
   group('계산 작업', () {
     test('더하기 테스트', () {
@@ -30,10 +31,9 @@ void main() {
 
     test('천 단위 구분자 예외 테스트', () {
       expect(
-            () => calculator.calculate('1,000 + 2'),
+        () => calculator.calculate('1,000 + 2'),
         throwsFormatException,
       );
     });
-
   });
 }

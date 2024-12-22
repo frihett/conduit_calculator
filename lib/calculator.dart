@@ -2,7 +2,9 @@ import 'package:conduit_calculator/input_parser.dart';
 import 'package:conduit_calculator/operation_factory.dart';
 
 class Calculator {
-  final inputParser = InputParser();
+  final InputParser inputParser;
+
+  Calculator(this.inputParser);
 
   double calculate(String input) {
     final parts = inputParser.parse(input);
@@ -11,7 +13,7 @@ class Calculator {
     final String operator = parts[1];
     final double operand2 = double.parse(parts[2]);
 
-    final operation = OperationFactory.getOperation(operator);
+    final operation =  OperationFactory.getOperation(operator);
     return operation.calculate(operand1, operand2);
   }
 }
